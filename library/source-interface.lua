@@ -876,7 +876,7 @@ function PrivilegedLibrary:CreateWindow(Settings)
 	Main.Shadow.Image.ImageTransparency = 1
 	LoadingFrame.Version.TextTransparency = 1
 	LoadingFrame.Title.Text = Settings.LoadingTitle or "Privileged Interface Suite"
-	LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "by Sirius"
+	LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "Untitled"
 	if Settings.LoadingTitle ~= "Privileged Interface Suite" then
 		LoadingFrame.Version.Text = "Privileged UI"
 	end
