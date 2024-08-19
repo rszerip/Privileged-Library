@@ -145,6 +145,7 @@ local Topbar = Main.Topbar
 local Elements = Main.Elements
 local LoadingFrame = Main.LoadingFrame
 local TabList = Main.TabList
+local MinimizeIconID = nil
 
 Privileged.DisplayOrder = 100
 LoadingFrame.Version.Text = Release
@@ -876,6 +877,9 @@ function PrivilegedLibrary:CreateWindow(Settings)
 	LoadingFrame.Version.TextTransparency = 1
 	LoadingFrame.Title.Text = Settings.LoadingTitle or "Privileged Interface Suite"
 	LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "Untitled"
+	if Settings.Minimize then
+		MinimizeIconID = Settings.Minimize.icon
+	end
 	if Settings.LoadingTitle ~= "Privileged Interface Suite" then
 		LoadingFrame.Version.Text = "Privileged UI"
 	end
@@ -2462,9 +2466,8 @@ local MinimizeBTNmbl_dragStart
 local MinimizeBTNmbl_startPos
 local MinimizeBTNmbl_isMoved = false
 
-local MinimizeBTNmbl_decalID = ""
-if MinimizeBTNmbl_decalID ~= "" then
-    MinimizeBTNmbl_Minimize.Image = "rbxassetid://" .. MinimizeBTNmbl_decalID
+if MinimizeIconID ~= "" then
+    MinimizeBTNmbl_Minimize.Image = "rbxassetid://" .. MinimizeIconID
 else
     MinimizeBTNmbl_Minimize.Image = ""
 end
