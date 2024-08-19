@@ -876,9 +876,7 @@ function PrivilegedLibrary:CreateWindow(Settings)
 	LoadingFrame.Version.TextTransparency = 1
 	LoadingFrame.Title.Text = Settings.LoadingTitle or "Privileged Interface Suite"
 	LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "Untitled"
-	if Settings.Minimize then
-		MinimizeIconID = Settings.Minimize.icon
-	end
+	
 	if Settings.LoadingTitle ~= "Privileged Interface Suite" then
 		LoadingFrame.Version.Text = "Privileged UI"
 	end
