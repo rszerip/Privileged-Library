@@ -630,7 +630,6 @@ end
 
 function Hide()
 	Debounce = true
-	PrivilegedLibrary:Notify({Title = "Interface Oculta", Content = "Pressione 'K' para reabrir o painel.", Duration = 7})
 	TweenService:Create(Main, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Size = UDim2.new(0, 470, 0, 400)}):Play()
 	TweenService:Create(Main.Topbar, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Size = UDim2.new(0, 470, 0, 45)}):Play()
 	TweenService:Create(Main, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {BackgroundTransparency = 1}):Play()
@@ -2438,12 +2437,11 @@ end)
 
 local MinimizeBTNmbl_ScreenGui = Instance.new("ScreenGui")
 local MinimizeBTNmbl_Minimize = Instance.new("ImageButton")
-local MinimizeBTNmbl_UserInputService = game:GetService("UserInputService")
 
 MinimizeBTNmbl_ScreenGui.Parent = game:GetService("CoreGui")
 MinimizeBTNmbl_ScreenGui.ResetOnSpawn = false
 
-local MinimizeBTNmbl_sizeScale = 0.15
+local MinimizeBTNmbl_sizeScale = 0.12
 local MinimizeBTNmbl_squareSize = math.min(workspace.CurrentCamera.ViewportSize.X, workspace.CurrentCamera.ViewportSize.Y) * MinimizeBTNmbl_sizeScale
 
 MinimizeBTNmbl_Minimize.Parent = MinimizeBTNmbl_ScreenGui
@@ -2454,6 +2452,10 @@ MinimizeBTNmbl_Minimize.BackgroundTransparency = 0
 MinimizeBTNmbl_Minimize.Image = ""
 MinimizeBTNmbl_Minimize.ScaleType = Enum.ScaleType.Fit
 
+local MinimizeBTNmbl_Corner = Instance.new("UICorner")
+MinimizeBTNmbl_Corner.CornerRadius = UDim.new(0, 10)
+MinimizeBTNmbl_Corner.Parent = MinimizeBTNmbl_Minimize
+
 local MinimizeBTNmbl_dragging = false
 local MinimizeBTNmbl_dragInput
 local MinimizeBTNmbl_dragStart
@@ -2463,9 +2465,11 @@ local MinimizeBTNmbl_isMoved = false
 local MinimizeBTNmbl_decalID = ""
 if MinimizeBTNmbl_decalID ~= "" then
     MinimizeBTNmbl_Minimize.Image = "rbxassetid://" .. MinimizeBTNmbl_decalID
+else
+    MinimizeBTNmbl_Minimize.Image = ""
 end
 
-local function MinimizeBTNmbl_minimize_upd(input)
+local function MinimizeBTNmbl_update(input)
     local MinimizeBTNmbl_delta = input.Position - MinimizeBTNmbl_dragStart
     MinimizeBTNmbl_Minimize.Position = UDim2.new(MinimizeBTNmbl_startPos.X.Scale, MinimizeBTNmbl_startPos.X.Offset + MinimizeBTNmbl_delta.X, MinimizeBTNmbl_startPos.Y.Scale, MinimizeBTNmbl_startPos.Y.Offset + MinimizeBTNmbl_delta.Y)
 end
@@ -2491,23 +2495,23 @@ MinimizeBTNmbl_Minimize.InputChanged:Connect(function(input)
     end
 end)
 
-MinimizeBTNmbl_UserInputService.InputChanged:Connect(function(input)
+game:GetService("UserInputService").InputChanged:Connect(function(input)
     if input == MinimizeBTNmbl_dragInput and MinimizeBTNmbl_dragging then
         MinimizeBTNmbl_isMoved = true
-        MinimizeBTNmbl_minimize_upd(input)
+        MinimizeBTNmbl_update(input)
     end
 end)
 
 MinimizeBTNmbl_Minimize.MouseButton1Click:Connect(function()
     if not MinimizeBTNmbl_isMoved then
-    	if Debounce then return end
-    	if Hidden then
-    		Hidden = false
-    		Unhide()
-    	else
-    		Hidden = true
-    		Hide()
-    	end
+        if Debounce then return end
+        if Hidden then
+            Hidden = false
+            Unhide()
+        else
+            Hidden = true
+            Hide()
+        end
     end
 end)
 
