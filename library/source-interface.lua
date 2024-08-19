@@ -2455,6 +2455,7 @@ MinimizeBTNmbl_Minimize.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 MinimizeBTNmbl_Minimize.BackgroundTransparency = 0
 MinimizeBTNmbl_Minimize.Image = ""
 MinimizeBTNmbl_Minimize.ScaleType = Enum.ScaleType.Fit
+MinimizeBTNmbl_Minimize.AutoButtonColor = false
 
 local MinimizeBTNmbl_Corner = Instance.new("UICorner")
 MinimizeBTNmbl_Corner.CornerRadius = UDim.new(0, 10)
