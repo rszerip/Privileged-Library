@@ -2419,7 +2419,7 @@ function PrivilegedLibrary:CreateMinimize(Settings)
 	local MinimizeBTNmbl_sizeScale = 0.12
 	local MinimizeBTNmbl_squareSize = math.min(workspace.CurrentCamera.ViewportSize.X, workspace.CurrentCamera.ViewportSize.Y) * MinimizeBTNmbl_sizeScale
 	
-	MinimizeBTNmbl_Minimize.Parent = MinimizeBTNmbl_ScreenGui
+	MinimizeBTNmbl_Minimize.Parent = gethui()
 	MinimizeBTNmbl_Minimize.Size = UDim2.new(0, MinimizeBTNmbl_squareSize, 0, MinimizeBTNmbl_squareSize)
 	MinimizeBTNmbl_Minimize.Position = UDim2.new(0.7, -MinimizeBTNmbl_squareSize / 2, 0.8, -MinimizeBTNmbl_squareSize / 2)
 	MinimizeBTNmbl_Minimize.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
