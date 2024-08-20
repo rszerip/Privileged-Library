@@ -2418,13 +2418,13 @@ function PrivilegedLibrary:CreateMinimize(Settings)
 	MinimizeBTNmbl_Minimize.Size = UDim2.new(0, MinimizeBTNmbl_squareSize, 0, MinimizeBTNmbl_squareSize)
 	MinimizeBTNmbl_Minimize.Position = UDim2.new(0, 73, 0, 50)
 	MinimizeBTNmbl_Minimize.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	MinimizeBTNmbl_Minimize.BackgroundTransparency = 0
+	MinimizeBTNmbl_Minimize.BackgroundTransparency = 1
+	MinimizeBTNmbl_Minimize.ScaleType = Enum.ScaleType.Fit
 	if iconID then
 	    MinimizeBTNmbl_Minimize.Image = "rbxassetid://" .. tonumber(iconID)
 	else
 	    MinimizeBTNmbl_Minimize.Image = ""
 	end
-	MinimizeBTNmbl_Minimize.ScaleType = Enum.ScaleType.Fit
 	
 	local MinimizeBTNmbl_Corner = Instance.new("UICorner")
 	MinimizeBTNmbl_Corner.CornerRadius = UDim.new(0, 10)
