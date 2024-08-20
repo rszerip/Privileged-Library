@@ -2410,7 +2410,6 @@ end
 function PrivilegedLibrary:CreateMinimize(Settings)
 	local iconID = Settings.icon
 	local MinimizeBTNmbl_Minimize = Instance.new("ImageButton")
-	MinimizeBTNmbl_Minimize.name = "MinimizeBTN"
 	
 	local MinimizeBTNmbl_sizeScale = 0.12
 	local MinimizeBTNmbl_squareSize = math.min(workspace.CurrentCamera.ViewportSize.X, workspace.CurrentCamera.ViewportSize.Y) * MinimizeBTNmbl_sizeScale
