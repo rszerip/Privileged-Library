@@ -2410,11 +2410,7 @@ end
 
 function PrivilegedLibrary:CreateMinimize(Settings)
 	local iconID = Settings.icon
-	local MinimizeBTNmbl_ScreenGui = Instance.new("ScreenGui")
 	local MinimizeBTNmbl_Minimize = Instance.new("ImageButton")
-	
-	MinimizeBTNmbl_ScreenGui.Parent = game:GetService("CoreGui")
-	MinimizeBTNmbl_ScreenGui.ResetOnSpawn = false
 	
 	local MinimizeBTNmbl_sizeScale = 0.12
 	local MinimizeBTNmbl_squareSize = math.min(workspace.CurrentCamera.ViewportSize.X, workspace.CurrentCamera.ViewportSize.Y) * MinimizeBTNmbl_sizeScale
