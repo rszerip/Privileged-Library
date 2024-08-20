@@ -2419,7 +2419,11 @@ function PrivilegedLibrary:CreateMinimize(Settings)
 	MinimizeBTNmbl_Minimize.Position = UDim2.new(0, 73, 0, 50)
 	MinimizeBTNmbl_Minimize.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 	MinimizeBTNmbl_Minimize.BackgroundTransparency = 0
-	MinimizeBTNmbl_Minimize.Image = ""
+	if iconID ~= "" then
+	    MinimizeBTNmbl_Minimize.Image = "rbxassetid://" .. iconID
+	else
+	    MinimizeBTNmbl_Minimize.Image = ""
+	end
 	MinimizeBTNmbl_Minimize.ScaleType = Enum.ScaleType.Fit
 	
 	local MinimizeBTNmbl_Corner = Instance.new("UICorner")
@@ -2431,12 +2435,6 @@ function PrivilegedLibrary:CreateMinimize(Settings)
 	local MinimizeBTNmbl_dragStart
 	local MinimizeBTNmbl_startPos
 	local MinimizeBTNmbl_isMoved = false
-	
-	if iconID ~= "" then
-	    MinimizeBTNmbl_Minimize.Image = "rbxassetid://" .. iconID
-	else
-	    MinimizeBTNmbl_Minimize.Image = ""
-	end
 	
 	local function MinimizeBTNmbl_update(input)
 	    local MinimizeBTNmbl_delta = input.Position - MinimizeBTNmbl_dragStart
