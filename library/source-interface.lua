@@ -108,7 +108,7 @@ local CoreGui = game:GetService("CoreGui")
 local Privileged = game:GetObjects("rbxassetid://10804731440")[1]
 
 Privileged.Enabled = false
-
+Privileged.name = "Ordep-Menu"
 
 if gethui then
 	Privileged.Parent = gethui()
@@ -125,14 +125,14 @@ if gethui then
 	for _, Interface in ipairs(gethui():GetChildren()) do
 		if Interface.Name == Privileged.Name and Interface ~= Privileged then
 			Interface.Enabled = false
-			Interface.Name = "Privileged-Old"
+			Interface.Name = "Ordep-Old"
 		end
 	end
 else
 	for _, Interface in ipairs(CoreGui:GetChildren()) do
 		if Interface.Name == Privileged.Name and Interface ~= Privileged then
 			Interface.Enabled = false
-			Interface.Name = "Privileged-Old"
+			Interface.Name = "Ordep-Old"
 		end
 	end
 end
