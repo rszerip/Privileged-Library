@@ -2419,8 +2419,8 @@ function PrivilegedLibrary:CreateMinimize(Settings)
 	MinimizeBTNmbl_Minimize.Position = UDim2.new(0, 73, 0, 50)
 	MinimizeBTNmbl_Minimize.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 	MinimizeBTNmbl_Minimize.BackgroundTransparency = 0
-	if iconID ~= "" then
-	    MinimizeBTNmbl_Minimize.Image = "rbxassetid://" .. iconID
+	if iconID then
+	    MinimizeBTNmbl_Minimize.Image = "rbxassetid://" .. tonumber(iconID)
 	else
 	    MinimizeBTNmbl_Minimize.Image = ""
 	end
