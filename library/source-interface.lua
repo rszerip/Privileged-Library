@@ -108,7 +108,6 @@ local CoreGui = game:GetService("CoreGui")
 local Privileged = game:GetObjects("rbxassetid://10804731440")[1]
 
 Privileged.Enabled = false
-Privileged.name = "Ordep-Menu"
 
 if gethui then
 	Privileged.Parent = gethui()
