@@ -1569,7 +1569,8 @@ function PrivilegedLibrary:CreateWindow(Settings)
 
 
 			local Label = Elements.Template.Label:Clone()
-			Label.Title.Text = LabelText
+			Label.Title.RichText = true
+			Label.Title.Text = "<b>"..LabelText.."</b>"
 			Label.Visible = true
 			Label.Parent = TabPage
 
