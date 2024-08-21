@@ -1577,8 +1577,8 @@ function PrivilegedLibrary:CreateWindow(Settings)
 			Label.UIStroke.Transparency = 0
 			Label.Title.TextTransparency = 1
 
-			Label.BackgroundColor3 = SelectedTheme.SecondaryElementBackground
-			Label.UIStroke.Color = SelectedTheme.SecondaryElementStroke
+			Label.BackgroundColor3 = SelectedTheme.Background
+			Label.UIStroke.Color = SelectedTheme.Background
 
 			TweenService:Create(Label, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {BackgroundTransparency = 0}):Play()
 			TweenService:Create(Label.UIStroke, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {Transparency = 0}):Play()
