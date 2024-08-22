@@ -1955,7 +1955,7 @@ function PrivilegedLibrary:CreateWindow(Settings)
 						end
 					end
 				end
-				--SaveConfiguration()
+				SaveConfiguration()
 			end
 
 			if Settings.ConfigurationSaving then
