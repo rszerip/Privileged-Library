@@ -1576,6 +1576,7 @@ function PrivilegedLibrary:CreateWindow(Settings)
 			Section.Title.Text = "<b>"..SectionName.."</b>"
 			Section.Title.RichText = true
 			Section.Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Section.Title.TextSize = 36
 			Section.Visible = true
 			Section.Parent = TabPage
 
