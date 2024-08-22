@@ -243,8 +243,6 @@ local function LoadConfiguration(Configuration)
 					if PrivilegedLibrary.Flags[FlagName].CurrentValue or PrivilegedLibrary.Flags[FlagName].CurrentKeybind or PrivilegedLibrary.Flags[FlagName].CurrentOption or PrivilegedLibrary.Flags[FlagName].Color ~= FlagValue then PrivilegedLibrary.Flags[FlagName]:Set(FlagValue) end
 				end    
 			end)
-		else
-			PrivilegedLibrary:Notify({Title = "Flag Error", Content = "Privileged não encontrou'"..FlagName.. "'' no script atual."})
 		end
 	end
 end
