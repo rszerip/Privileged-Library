@@ -243,8 +243,6 @@ local function LoadConfiguration(Configuration)
 					if PrivilegedLibrary.Flags[FlagName].CurrentValue or PrivilegedLibrary.Flags[FlagName].CurrentKeybind or PrivilegedLibrary.Flags[FlagName].CurrentOption or PrivilegedLibrary.Flags[FlagName].Color ~= FlagValue then PrivilegedLibrary.Flags[FlagName]:Set(FlagValue) end
 				end    
 			end)
-		else
-			print("Flag Error | Not found "..FlagName)
 		end
 	end
 end
