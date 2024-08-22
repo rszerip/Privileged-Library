@@ -1563,33 +1563,32 @@ function PrivilegedLibrary:CreateWindow(Settings)
 		end
 
 		-- Title
-		function Tab:CreateTitle(LabelText)
+		function Tab:CreateTitle(SectionName)
+			local SectionValue = {}
 
-			local LabelValue = {}
-
-
-			local Label = Elements.Template.Label:Clone()
-			Label.Title.RichText = true
-			Label.Title.Text = "<b>"..LabelText.."</b>"
-			Label.Visible = true
-			Label.Parent = TabPage
-
-			Label.BackgroundTransparency = 0
-			Label.UIStroke.Transparency = 0
-			Label.Title.TextTransparency = 1
-
-			Label.BackgroundColor3 = SelectedTheme.Background
-			Label.UIStroke.Color = SelectedTheme.Background
-
-			TweenService:Create(Label, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {BackgroundTransparency = 0}):Play()
-			TweenService:Create(Label.UIStroke, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {Transparency = 0}):Play()
-			TweenService:Create(Label.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = 0}):Play()	
-
-			function LabelValue:Set(NewLabel)
-				Label.Title.Text = NewLabel
+			if SDone then
+				local SectionSpace = Elements.Template.SectionSpacing:Clone()
+				SectionSpace.Visible = true
+				SectionSpace.Parent = TabPage
 			end
 
-			return LabelValue
+			local Section = Elements.Template.SectionTitle:Clone()
+			Section.Title.Text = "<b>"..SectionName.."</b>"
+			Section.Title.RichText = true
+			Section.Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Section.Visible = true
+			Section.Parent = TabPage
+
+			Section.Title.TextTransparency = 1
+			TweenService:Create(Section.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = 0}):Play()
+
+			function SectionValue:Set(NewSection)
+				Section.Title.Text = NewSection
+			end
+
+			SDone = true
+
+			return SectionValue
 		end
 
 		-- Label
