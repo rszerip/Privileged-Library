@@ -1536,34 +1536,6 @@ function PrivilegedLibrary:CreateWindow(Settings)
 
 		-- Section
 		function Tab:CreateSection(SectionName)
-
-			local SectionValue = {}
-
-			if SDone then
-				local SectionSpace = Elements.Template.SectionSpacing:Clone()
-				SectionSpace.Visible = true
-				SectionSpace.Parent = TabPage
-			end
-
-			local Section = Elements.Template.SectionTitle:Clone()
-			Section.Title.Text = SectionName
-			Section.Visible = true
-			Section.Parent = TabPage
-
-			Section.Title.TextTransparency = 1
-			TweenService:Create(Section.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = 0}):Play()
-
-			function SectionValue:Set(NewSection)
-				Section.Title.Text = NewSection
-			end
-
-			SDone = true
-
-			return SectionValue
-		end
-
-		-- Title
-		function Tab:CreateTitle(SectionName)
 			local SectionValue = {}
 
 			if SDone then
