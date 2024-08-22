@@ -244,7 +244,7 @@ local function LoadConfiguration(Configuration)
 				end    
 			end)
 		else
-			print("Flag Error | Not found'"..FlagName)
+			print("Flag Error | Not found "..FlagName)
 		end
 	end
 end
